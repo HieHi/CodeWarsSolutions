@@ -1,0 +1,18 @@
+ticket1 = [ [ 'ABC', 65 ], [ 'HGR', 74 ], [ 'BYHT', 74 ] ] ### Test variable ticket №1
+ticket2 = [ [ 'HGTYRE', 74 ], [ 'BE', 66 ], [ 'JKTY', 74 ] ] ### Test variable ticket №2
+
+def bingo(ticket,win): ### Function initialization
+
+    temp = 0 ### Temporary variable to compare with win
+
+    for i in range(len(ticket)): ### Cycle of two-dimmensional array elements comparsion
+        for j in range(len(ticket[i][0])):
+            if ord(ticket[i][0][j]) == ticket[i][1]: ### Comparsion of every character in string with ASCII value in sub-array
+                temp += 1 ### If it matches the condition - variable temp adds one
+
+    if temp >= win: ### Compare variable with win
+        return 'Winner!' ### If matches or higher - Win!
+    else:
+        return 'Loser!' ### Else lose!
+
+bingo(ticket2,3) ### Calling the Bingo function
